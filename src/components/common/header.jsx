@@ -1,9 +1,7 @@
-
-
-export const Header = () => {
+export default function Header() {
     return (
         <Header>
-            <p>test</p>
+            <p>test2</p>
         </Header>
     )
 }
