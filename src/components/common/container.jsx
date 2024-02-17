@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils"
-export default function Container({ children, type, maxWidth }) {
 
-  const styles = `${cn(maxWidth ? maxWidth : 'max-w-7xl', 'mx-auto')}`
+export default function Container({ children, type, maxWidth, customClass}) {
+  const styles = `${cn(maxWidth ? maxWidth : 'max-w-7xl', customClass ? customClass : '', 'mx-auto')}`
 
   if (type === "section") {
     return (
-      <section className={styles}>
+    <section className={styles}>    
         {children}
       </section>
     )

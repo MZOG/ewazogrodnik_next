@@ -1,7 +1,7 @@
 export default function Header() {
-    return (
-        <Header>
-            <p>test2</p>
-        </Header>
-    )
+  return (
+    <header>
+      <p>test2</p>
+    </header>
+  );
 }
