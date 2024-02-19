@@ -1,5 +1,6 @@
 import Container from "@/components/common/container";
 import { performRequest } from "@/lib/datocms"
+import LatestWorks from "@/components/latest-works";
 
 const PAGE_CONTENT_QUERY = `
   query Home {
@@ -14,10 +15,13 @@ export default async function Home() {
   const { title } = homepage;
 
   return (
-    <Container type="section" customClass="bg-rose-200 mt-1 rounded-lg pb-10 pt-[150px]">
-      <p className="text-indigo-900">
+    <>
+    <Container type="section" customClass="bg-rose-200 rounded-xl p-10">
+      <p>
         {title}
       </p>
     </Container>
+    <LatestWorks />
+    </>
   );
 }
