@@ -13,7 +13,6 @@ const PARAMS_QUERY = `
 
 export async function generateStaticParams() {
   const { data: { allWorks } } = await performRequest({ query: PARAMS_QUERY});
-  console.log(allWorks);
   return allWorks?.map(({ slug }) => slug);
 }
 

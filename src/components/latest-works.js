@@ -6,7 +6,7 @@ import { serif_display } from "@/lib/fonts";
 
 const WORKS_QUERY = `
   query Works {
-    allWorks {
+    allWorks(first: "8") {
       title
       slug
       mainImage {
