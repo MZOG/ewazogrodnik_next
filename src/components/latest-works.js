@@ -26,7 +26,7 @@ export default async function LatestWorks() {
 
   return (
     <Container type="section">
-    <h2 className={`${serif_display.className} text-3xl text-center`}>Latest works</h2>
+    <h2 className={`${serif_display.className} text-2xl md:text-3xl text-center`}>Latest works</h2>
 
     <div className="flex justify-center mt-5">
       <Button asChild variant="rose">
@@ -36,7 +36,7 @@ export default async function LatestWorks() {
       </Button>
     </div>
 
-    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 mt-14">
+    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 mt-8 md:mt-14">
       {allWorks.map((work, index) => {
         const { slug, title, mainImage: { responsiveImage } } = work
         return (

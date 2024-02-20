@@ -17,9 +17,9 @@ export default async function Home() {
 
   return (
     <>
-    <Container type="section" customClass="p-14">
+    <Container type="section" customClass="py-8 md:py-14">
       <div className="flex justify-center">
-        <h1 className={`text-5xl leading-relaxed font-bold md:text-center ${serif_display.className} bg-gradient-to-r from-rose-400 to-rose-300 inline-block text-transparent bg-clip-text`}>
+        <h1 className={`text-3xl md:text-5xl md:leading-relaxed font-bold text-center ${serif_display.className} bg-gradient-to-r from-rose-400 to-rose-300 inline-block text-transparent bg-clip-text`}>
           {title}
         </h1>
       </div>
