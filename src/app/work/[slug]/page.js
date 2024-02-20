@@ -26,6 +26,7 @@ const WORK_QUERY = `
           height
           width
         }
+        blurUpThumb
       }
     }
   }`;
@@ -58,6 +59,8 @@ export default async function Work({ params }) {
           width={work.mainImage.responsiveImage.width} 
           height={work.mainImage.responsiveImage.height}
           className="rounded-xl max-w-2xl mx-auto w-full"
+          blurDataURL={work.mainImage.blurUpThumb}
+          placeholder="blur"
         />
     </Container>
   )
