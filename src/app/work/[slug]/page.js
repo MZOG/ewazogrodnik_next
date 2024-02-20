@@ -12,6 +12,7 @@ const PARAMS_QUERY = `
 
 export async function generateStaticParams() {
   const { data: { allWorks } } = await performRequest({ query: PARAMS_QUERY});
+  console.log(allWorks);
   return allWorks?.map(({ slug }) => slug);
 }
 
@@ -20,6 +21,17 @@ const WORK_QUERY = `
     work(filter: {slug: {eq: $slug}})  {
       title
       slug
+      shortDescription
+      availability
+      sizes
+      color
+      gallery {
+        responsiveImage {
+          width
+          src
+          height
+        }
+      }
       mainImage {
         responsiveImage {
           src
@@ -47,11 +59,10 @@ export async function generateMetadata({ params }) {
 export default async function Work({ params }) {
   const { slug } = params;
   const { data: { work } } = await performRequest(getPageRequest(slug))
-  const { title } = work
+  const { title, shortDescription, sizes, color, availability } = work
 
   return (
-    <Container type="section" customClass="flex flex-col items-center gap-10 justify-center">
-      <h1 className={`${serif_display.className} text-5xl`}>{ title }</h1>
+    <Container type="section" customClass="grid md:grid-cols-2 gap-5 md:gap-10 mt-10">
       <Image 
           alt={title} 
           sizes={work.mainImage.responsiveImage.sizes} 
@@ -62,6 +73,32 @@ export default async function Work({ params }) {
           blurDataURL={work.mainImage.blurUpThumb}
           placeholder="blur"
         />
+      <aside>
+        <h1 className={`${serif_display.className} text-5xl`}>{ title }</h1>
+        <p className="text-sm mt-2 text-primary/50">SKU: <span>#{slug}</span></p>
+        {shortDescription && 
+          <div className="mt-5">
+            <p className="font-medium">Description</p>
+            <p>{shortDescription}</p>
+          </div>
+        }
+        {availability && 
+          <div className="mt-5">
+            <p className="font-medium">Available items: <span className="block font-normal">{availability}</span></p>
+          </div>
+        }
+        {sizes && 
+          <div className="mt-5">
+            <p className="font-medium">Sizes: <span className="block font-normal">Ø {sizes}</span></p>
+          </div>
+        }
+        {color && 
+          <div className="mt-5">
+            <p className="font-medium">Color: <span className="block font-normal">{color}</span></p>
+          </div>
+        }
+      </aside>
+      
     </Container>
   )
 }
