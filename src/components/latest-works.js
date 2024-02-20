@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { performRequest } from "@/lib/datocms"
 import { serif_display } from "@/lib/fonts";
+import { Button } from "./ui/button";
 
 const WORKS_QUERY = `
   query Works {
@@ -26,6 +27,14 @@ export default async function LatestWorks() {
   return (
     <Container type="section">
     <h2 className={`${serif_display.className} text-3xl text-center`}>Latest works</h2>
+
+    <div className="flex justify-center mt-5">
+      <Button asChild variant="rose">
+        <Link href="/works">
+          View all
+        </Link>
+      </Button>
+    </div>
 
     <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 mt-14">
       {allWorks.map((work, index) => {
