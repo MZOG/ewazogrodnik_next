@@ -29,7 +29,7 @@ export default async function Works() {
 
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 mt-14">
       {allWorks.map((work, index) => {
-        const { slug, title, mainImage: { responsiveImage } } = work
+        const { slug, title, mainImage: { responsiveImage, blurUpThumb } } = work
         return (
           <Link href={`/work/${slug}`} key={index} className="mb-5 block">
             <Image 
@@ -38,6 +38,8 @@ export default async function Works() {
               src={responsiveImage.src} 
               width={responsiveImage.width} 
               height={responsiveImage.height}
+              blurDataURL={blurUpThumb}
+              placeholder="blur"
               className="rounded-xl h-auto max-w-full"
             />
           </Link>

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="max-w-6xl mx-auto p-5 bg-rose-200/30 rounded-xl text-sm mt-10 flex flex-col md:flex-row justify-between">
+    <footer className="max-w-6xl mx-auto p-5 bg-rose-200/30 rounded-xl text-smgs mt-10 flex flex-col md:flex-row justify-between">
       <p>ewazogrodnik.com &copy; 2024</p>
       <p>
         by{" "}
