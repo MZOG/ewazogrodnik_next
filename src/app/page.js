@@ -23,7 +23,7 @@ export default async function Home() {
           {title}
         </h1>
       </div>
-      <p className="md:text-center mt-5 text-lg">Elo</p>
+      {/* <p className="md:text-center mt-5 text-lg">Elo</p> */}
     </Container>
     <LatestWorks />
     </>
