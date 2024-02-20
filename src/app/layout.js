@@ -6,9 +6,11 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 
 export const metadata = {
-  title: "Ewa Zogrodnik",
-  description: "TODO",
-};
+  title: {
+    template: '%s | Ewa Zogrodnik',
+    default: 'Ewa Zogrodnik'
+  },
+}
 
 export default function RootLayout({ children }) {
   return (
