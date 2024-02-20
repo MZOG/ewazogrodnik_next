@@ -1,6 +1,7 @@
 import Container from "@/components/common/container";
 import { performRequest } from "@/lib/datocms"
 import LatestWorks from "@/components/latest-works";
+import { serif_display } from "@/lib/fonts";
 
 const PAGE_CONTENT_QUERY = `
   query Home {
@@ -16,10 +17,13 @@ export default async function Home() {
 
   return (
     <>
-    <Container type="section" customClass="bg-rose-200 rounded-xl p-10">
-      <p>
-        {title}
-      </p>
+    <Container type="section" customClass="p-14">
+      <div className="flex justify-center">
+        <h1 className={`text-5xl leading-relaxed font-bold md:text-center ${serif_display.className} bg-gradient-to-r from-rose-400 to-rose-300 inline-block text-transparent bg-clip-text`}>
+          {title}
+        </h1>
+      </div>
+      <p className="md:text-center mt-5 text-lg">Elo</p>
     </Container>
     <LatestWorks />
     </>
