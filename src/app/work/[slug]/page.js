@@ -2,6 +2,7 @@ import Container from "@/components/common/container";
 import { performRequest } from "@/lib/datocms"
 import Image from "next/image";
 import { serif_display } from "@/lib/fonts";
+import { Button } from "@/components/ui/button";
 
 const PARAMS_QUERY = `
   query AllWorks {
@@ -97,6 +98,13 @@ export default async function Work({ params }) {
             <p className="font-medium">Color: <span className="block font-normal">{color}</span></p>
           </div>
         }
+
+        <Button asChild variant="rose" className="mt-5">
+          <a href="https://www.facebook.com/messages/t/100024651574829" target="_blank">
+            Buy now
+          </a>
+        </Button>
+        <p className="text-sm mt-2">Please provide item number</p>
       </aside>
       
     </Container>
