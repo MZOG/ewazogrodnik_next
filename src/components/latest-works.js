@@ -1,15 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+import Container from "./common/container";
 import Image from "next/image";
 import Link from "next/link";
-
 import { performRequest } from "@/lib/datocms"
+import { serif_display } from "@/lib/fonts";
 
 const WORKS_QUERY = `
   query Works {
@@ -31,10 +24,10 @@ export default async function LatestWorks() {
   const { data: { allWorks } } = await performRequest({ query: WORKS_QUERY });
 
   return (
-    <>
-    <h2 className="text-center">Latest works</h2>
+    <Container type="section" customClass="mt-14">
+    <h2 className={`${serif_display.className} text-3xl`}>Latest works</h2>
 
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
       {allWorks.map((work, index) => {
         const { slug, title, mainImage: { responsiveImage } } = work
         return (
@@ -45,12 +38,12 @@ export default async function LatestWorks() {
               src={responsiveImage.src} 
               width={responsiveImage.width} 
               height={responsiveImage.height}
-              className="rounded-lg"
+              className="rounded-xl"
             />
           </Link>
         )
       })}
     </div>
-    </>
+    </Container>
   )
 }

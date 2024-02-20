@@ -3,32 +3,15 @@ import Logo from "/public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+import { useState } from "react";
+import { Dialog, Popover } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navItems = [
-  { name: "Start", href: "/", icon: PlayCircleIcon },
-  { name: "My works", href: "/works", icon: PhoneIcon },
-  { name: "Contact", href: "/contact", icon: PhoneIcon },
+  { name: "Start", href: "/" },
+  { name: "My works", href: "/works" },
+  { name: "Contact", href: "/contact" },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,7 +19,7 @@ export default function Header() {
   return (
     <header className="">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-5"
+        className="mx-auto flex max-w-6xl items-center justify-between p-5"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">

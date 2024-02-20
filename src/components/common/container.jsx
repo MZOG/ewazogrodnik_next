@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 export default function Container({ children, type, maxWidth, customClass }) {
   const styles = `${cn(
-    maxWidth ? maxWidth : "max-w-7xl",
+    maxWidth ? maxWidth : "max-w-6xl",
     customClass ? customClass : "",
     "mx-auto px-5"
   )}`;
