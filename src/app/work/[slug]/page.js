@@ -24,7 +24,9 @@ const WORK_QUERY = `
       shortDescription
       availability
       sizes
+      price
       color
+      isCircle
       gallery {
         responsiveImage {
           width
@@ -59,7 +61,7 @@ export async function generateMetadata({ params }) {
 export default async function Work({ params }) {
   const { slug } = params;
   const { data: { work } } = await performRequest(getPageRequest(slug))
-  const { title, shortDescription, sizes, color, availability } = work
+  const { title, shortDescription, sizes, color, availability, isCircle, price } = work
 
   return (
     <Container type="section" customClass="grid md:grid-cols-2 gap-5 md:gap-10 mt-10">
@@ -82,6 +84,11 @@ export default async function Work({ params }) {
             <p>{shortDescription}</p>
           </div>
         }
+        {price && 
+          <div className="mt-5">
+            <p className="font-medium">Price: <span className="block font-normal">£{price}</span></p>
+          </div>
+        }
         {availability && 
           <div className="mt-5">
             <p className="font-medium">Available items: <span className="block font-normal">{availability}</span></p>
@@ -89,7 +96,7 @@ export default async function Work({ params }) {
         }
         {sizes && 
           <div className="mt-5">
-            <p className="font-medium">Sizes: <span className="block font-normal">Ø {sizes}</span></p>
+            <p className="font-medium">Sizes: <span className="block font-normal">{isCircle && "Ø"} {sizes} cm</span></p>
           </div>
         }
         {color && 

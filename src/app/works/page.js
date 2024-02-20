@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const WORKS_QUERY = `
   query Works {
-    allWorks {
+    allWorks(first: "100", orderBy: _createdAt_DESC) {
       title
       slug
       mainImage {

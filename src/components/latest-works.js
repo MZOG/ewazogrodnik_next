@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 const WORKS_QUERY = `
   query Works {
-    allWorks(first: "8") {
+    allWorks(first: "8", orderBy: _createdAt_DESC) {
       title
       slug
       mainImage {
