@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        rose: "bg-rose-300 rounded-md hover:bg-rose-400",
+        rose: "bg-rose-400 text-white rounded-md hover:bg-rose-500/60",
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive:

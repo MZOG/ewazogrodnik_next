@@ -25,7 +25,7 @@ export default async function Works() {
 
   return (
     <Container type="section">
-      <h2 className={`${serif_display.className} text-3xl text-center`}>All works</h2>
+      <h1 className={`${serif_display.className} text-3xl text-center`}>All works</h1>
 
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-5 mt-14">
       {allWorks.map((work, index) => {

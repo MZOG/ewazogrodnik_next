@@ -64,7 +64,7 @@ export default async function Work({ params }) {
   const { title, shortDescription, sizes, color, availability, isCircle, price } = work
 
   return (
-    <Container type="section" customClass="grid md:grid-cols-2 gap-5 md:gap-10 mt-10">
+    <Container type="section" maxWidth="max-w-4xl" customClass="grid md:grid-cols-2 gap-5 md:gap-10 mt-10">
       <Image 
           alt={title} 
           sizes={work.mainImage.responsiveImage.sizes} 

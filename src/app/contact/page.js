@@ -14,17 +14,17 @@ export default async function Contact() {
       <div className="flex flex-col items-center gap-7 justify-center">
         <div className="grid w-full max-w-xs items-center gap-1.5">
           <Label htmlFor="name">Your name</Label>
-          <Input type="text" id="name" placeholder="Full name" className="border-rose-200 placeholder:text-primary/80" />
+          <Input type="text" id="name" placeholder="Full name" className="border-rose-200 bg-white placeholder:text-primary/80" />
         </div>
 
         <div className="grid w-full max-w-xs items-center gap-1.5">
           <Label htmlFor="email">Email</Label>
-          <Input type="email" id="email" placeholder="Email" className="border-rose-200 placeholder:text-primary/80" />
+          <Input type="email" id="email" placeholder="Email" className="border-rose-200 bg-white placeholder:text-primary/80" />
         </div>
 
         <div className="grid w-full max-w-xs items-center gap-1.5">
           <Label htmlFor="message">Message</Label>
-          <Textarea id="message" className="border-rose-200 placeholder:text-primary/80 resize-none" />
+          <Textarea id="message" className="border-rose-200 bg-white placeholder:text-primary/80 resize-none" />
         </div>
 
         <Button variant="rose">
