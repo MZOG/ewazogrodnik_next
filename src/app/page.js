@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container type="section" customClass="py-8 md:py-14">
+      <Container type="section" customClass="py-8 md:py-10">
         <div className="flex justify-center">
           <h1
             className={`text-center text-3xl font-bold md:text-5xl md:leading-relaxed ${serif_display.className} inline-block bg-gradient-to-r from-rose-400 to-rose-300 bg-clip-text text-transparent`}
@@ -21,7 +21,6 @@ export default async function Home() {
             {title}
           </h1>
         </div>
-        {/* <p className="md:text-center mt-5 text-lg">Elo</p> */}
       </Container>
       <LatestWorks />
     </>

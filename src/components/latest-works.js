@@ -5,6 +5,7 @@ import Link from "next/link";
 import { WORKS_QUERY } from "../utils/all-works";
 import Container from "./common/container";
 import { Button } from "./ui/button";
+import Marquee from "react-fast-marquee";
 
 export default async function LatestWorks() {
   const {
@@ -12,20 +13,8 @@ export default async function LatestWorks() {
   } = await performRequest({ query: WORKS_QUERY });
 
   return (
-    <Container type="section">
-      <h2
-        className={`${serif_display.className} text-center text-2xl md:text-3xl`}
-      >
-        Latest works
-      </h2>
-
-      <div className="mt-5 flex justify-center">
-        <Button asChild variant="rose">
-          <Link href="/works">View all</Link>
-        </Button>
-      </div>
-
-      <div className="mt-8 columns-1 gap-5 sm:columns-2 md:mt-14 md:columns-3 lg:columns-4">
+    <>
+      <Marquee speed={70} pauseOnHover={true}>
         {allWorks.map((work, index) => {
           const {
             slug,
@@ -33,12 +22,16 @@ export default async function LatestWorks() {
             mainImage: { responsiveImage, blurUpThumb },
           } = work;
           return (
-            <Link href={`/work/${slug}`} key={index} className="mb-5 block">
+            <Link
+              href={`/work/${slug}`}
+              key={index}
+              className="mx-3 block w-full"
+            >
               <Image
                 alt={title}
                 sizes={responsiveImage.sizes}
                 src={responsiveImage.src}
-                width={responsiveImage.width}
+                width={300}
                 height={responsiveImage.height}
                 blurDataURL={blurUpThumb}
                 placeholder="blur"
@@ -47,7 +40,13 @@ export default async function LatestWorks() {
             </Link>
           );
         })}
+      </Marquee>
+
+      <div className="mt-10 flex justify-center">
+        <Button asChild variant="rose">
+          <Link href="/works">View all</Link>
+        </Button>
       </div>
-    </Container>
+    </>
   );
 }

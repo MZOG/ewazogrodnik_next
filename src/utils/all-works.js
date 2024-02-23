@@ -1,6 +1,6 @@
 const WORKS_QUERY = `
   query Works {
-    allWorks(first: "8", orderBy: _createdAt_DESC) {
+    allWorks(first: "8", orderBy: _createdAt_ASC) {
       title
       slug
       mainImage {
