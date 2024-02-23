@@ -14,7 +14,7 @@ export default async function LatestWorks() {
 
   return (
     <>
-      <Marquee speed={70} pauseOnHover={true}>
+      <Marquee>
         {allWorks.map((work, index) => {
           const {
             slug,
