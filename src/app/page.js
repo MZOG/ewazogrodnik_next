@@ -21,9 +21,9 @@ export default async function Home() {
             {title}
           </h1>
           <p className="mx-auto text-center md:max-w-md">
-            Here, you'll find a collection of handmade crochet doilies that are
-            perfect for adding a touch of elegance and sophistication to your
-            home
+            Here, you&apos;ll find a collection of handmade crochet doilies that
+            are perfect for adding a touch of elegance and sophistication to
+            your home
           </p>
         </div>
       </Container>
