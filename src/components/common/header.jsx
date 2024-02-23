@@ -42,7 +42,7 @@ export default function Header() {
             <Link
               key={index}
               href={item.href}
-              className="leading-6 text-sm font-medium text-primary hover:text-black"
+              className="text-primary text-sm font-medium leading-6 hover:text-black"
             >
               {item.name}
             </Link>
@@ -57,7 +57,7 @@ export default function Header() {
       >
         {/* mobile */}
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 sm:inset-y-2 right-0 sm:border sm:border-rose-300/70 sm:rounded-tl-xl sm:rounded-bl-xl z-10 w-full overflow-y-auto bg-rose-100 px-5 py-5 sm:max-w-sm ">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-rose-100 px-5 py-5 sm:inset-y-2 sm:max-w-sm sm:rounded-bl-xl sm:rounded-tl-xl sm:border sm:border-rose-300/70 ">
           <div className="flex items-center justify-between sm:justify-end">
             <Link href="/" className="sm:hidden">
               <Image src={Logo} alt="Ewa Zogrodnik" width={50} />
@@ -74,24 +74,16 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Start
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  My works
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Contact
-                </a>
+                {navItems.map((item, index) => (
+                  <Link
+                    onClick={() => setMobileMenuOpen(false)}
+                    key={index}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
