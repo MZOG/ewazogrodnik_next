@@ -31,8 +31,8 @@ export default async function LatestWorks() {
                 src={responsiveImage.src}
                 width={300}
                 height={200}
-                blurDataURL={blurUpThumb}
-                placeholder="blur"
+                // blurDataURL={blurUpThumb}
+                // placeholder="blur"
                 className="h-auto max-w-full rounded-xl"
               />
             </Link>
