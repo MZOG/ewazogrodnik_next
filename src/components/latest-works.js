@@ -1,9 +1,7 @@
 import { performRequest } from "@/lib/datocms";
-import { serif_display } from "@/lib/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import { WORKS_QUERY } from "../utils/all-works";
-import Container from "./common/container";
 import { Button } from "./ui/button";
 import Marquee from "react-fast-marquee";
 
@@ -32,7 +30,7 @@ export default async function LatestWorks() {
                 sizes={responsiveImage.sizes}
                 src={responsiveImage.src}
                 width={300}
-                height={responsiveImage.height}
+                height={200}
                 blurDataURL={blurUpThumb}
                 placeholder="blur"
                 className="h-auto max-w-full rounded-xl"
